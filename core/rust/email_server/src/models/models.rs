@@ -1,11 +1,11 @@
 use uuid::Uuid;
 use serde::{Serialize, Deserialize};
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, Hash, Eq, PartialEq,)]
 pub struct User {
-    email: String,
-    password: String,
-    created_on: chrono::NaiveDateTime
+    pub email: String,
+    pub password: String,
+    pub created_on: chrono::NaiveDateTime
 }
 
 impl User{
@@ -18,14 +18,14 @@ impl User{
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, Hash, Eq, PartialEq,)]
 pub struct Message{
-    id: Uuid,
-    sender_email: String,
-    receiver_email: String,
-    title: String,
-    body: String,
-    sent_on: chrono::NaiveDateTime
+    pub id: Uuid,
+    pub sender_email: String,
+    pub receiver_email: String,
+    pub title: String,
+    pub body: String,
+    pub sent_on: chrono::NaiveDateTime
 }
 
 impl Message{

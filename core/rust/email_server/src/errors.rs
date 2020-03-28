@@ -29,8 +29,8 @@ impl From<std::io::Error> for APIError {
     }
 }
 
-impl From<serde_json::error:Error> for APIError {
-    fn from(_: serde_json::error:Error) -> Self {
+impl From<serde_json::error::Error> for APIError {
+    fn from(_: serde_json::error::Error) -> Self {
         APIError::ParseError
     } 
 }

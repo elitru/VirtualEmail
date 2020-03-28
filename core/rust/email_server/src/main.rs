@@ -3,6 +3,7 @@ use actix_web::{middleware, web, App, HttpRequest, HttpServer};
 mod models;
 mod errors;
 mod io;
+mod session;
 
 async fn index(req: HttpRequest) -> &'static str {
     println!("REQ: {:?}", req);
